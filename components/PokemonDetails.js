@@ -1,7 +1,6 @@
 import React from 'react';
 
 const PokemonDetails = ({ pokemon }) => {
-  console.log(pokemon?.types?.[0]?.type?.name);
   return (
     <div className="bg-blue-400 pt-14">
       <div className="bg-white rounded-t-3xl p-4 md:p-8 relative">
