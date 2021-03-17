@@ -32,7 +32,7 @@ const MovePage = () => {
 
         <p>
           <span className="font-semibold">Power: </span>
-          <span className="capitalize">{move?.power}</span>
+          <span className="capitalize">{move?.power ? move?.power : '-'}</span>
         </p>
 
         <p>
@@ -41,10 +41,12 @@ const MovePage = () => {
         </p>
         <p>
           <span className="font-semibold">Accuracy: </span>
-          <span className="capitalize">{move?.accuracy}</span>
+          <span className="capitalize">
+            {move?.accuracy ? move?.accuracy : '-'}
+          </span>
         </p>
 
-        <div className="bg-gray-200 p-4 rounded-xl space-y-2">
+        <div className="bg-gray-200 p-4 my-4 rounded-xl space-y-2">
           <p className="text-xl font-semibold">Ingame description:</p>
           {move?.flavor_text_entries?.map((entry) => (
             <div
