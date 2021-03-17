@@ -37,6 +37,13 @@ const MainMenu = () => (
           </button>
         </Link>
       </li>
+      <li>
+        <Link href="/berries">
+          <button type="button" className="hover:underline">
+            Berries
+          </button>
+        </Link>
+      </li>
     </ul>
   </nav>
 );
