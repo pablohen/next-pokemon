@@ -19,17 +19,19 @@ const PokedexPage = () => {
   return (
     <div>
       <MainMenu />
-      <TitleBar title="PokéDexes" />
+      <TitleBar title="Pokédex" />
 
-      <ul>
-        {pokedexes.map((pokedex) => (
-          <li key={pokedex.name}>
-            <Link href={`/pokedex/${pokedex.name}`}>
-              <a>{pokedex.name}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <div className="px-4">
+        <ul>
+          {pokedexes.map((pokedex) => (
+            <li key={pokedex.name}>
+              <Link href={`/pokedex/${pokedex.name}`}>
+                <a className="capitalize">{pokedex.name}</a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

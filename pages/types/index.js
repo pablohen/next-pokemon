@@ -21,15 +21,17 @@ const TypesPage = () => {
       <MainMenu />
       <TitleBar title="Types" />
 
-      <ul>
-        {types.map((type) => (
-          <li key={type.name}>
-            <Link href={`/types/${type.name}`}>
-              <a className="capitalize">{type.name}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <div className="px-4">
+        <ul>
+          {types.map((type) => (
+            <li key={type.name}>
+              <Link href={`/types/${type.name}`}>
+                <a className="capitalize">{type.name}</a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

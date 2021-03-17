@@ -20,7 +20,7 @@ const MovesPage = () => {
       <MainMenu />
       <TitleBar title="Moves" />
 
-      <div>
+      <div className="px-4">
         <ul>
           {moves?.map((move) => (
             <li>
