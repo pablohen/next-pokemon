@@ -23,9 +23,11 @@ const MovesPage = () => {
       <div className="px-4">
         <ul>
           {moves?.map((move) => (
-            <li>
+            <li key={move?.name}>
               <Link href={`/moves/${move?.name}`}>
-                <a className="capitalize">{move?.name}</a>
+                <button type="button" className="capitalize">
+                  {move?.name}
+                </button>
               </Link>
             </li>
           ))}

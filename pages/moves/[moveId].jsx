@@ -46,8 +46,11 @@ const MovePage = () => {
 
         <div className="bg-gray-200 p-4 rounded-xl space-y-2">
           <p className="text-xl font-semibold">Ingame description:</p>
-          {move?.flavor_text_entries?.map((entry, index) => (
-            <div key={entry?.version_group?.name + index} className="">
+          {move?.flavor_text_entries?.map((entry) => (
+            <div
+              key={entry?.version_group?.name + entry?.flavor_text}
+              className=""
+            >
               <p className="capitalize font-semibold">
                 {entry?.version_group?.name}
               </p>

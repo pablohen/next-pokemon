@@ -6,13 +6,12 @@ const pokeapi = axios.create({
 
 const getPokedexes = async () => {
   try {
-    const res = await pokeapi.get(`/pokedex?limit=100`);
+    const res = await pokeapi.get('/pokedex?limit=100');
     const pokedexesData = await res.data.results;
 
     return pokedexesData;
   } catch (error) {
-    console.log(error);
-    return [];
+    throw new Error(error);
   }
 };
 
@@ -22,8 +21,7 @@ const getPokedex = async (selectedPokedex) => {
     const pokedexData = await res.data;
     return await pokedexData;
   } catch (error) {
-    console.log(error);
-    return [];
+    throw new Error(error);
   }
 };
 
@@ -33,20 +31,18 @@ const getPokemon = async (selectedPokemon) => {
     const pokemonData = await res.data;
     return pokemonData;
   } catch (error) {
-    console.log(error);
-    return {};
+    throw new Error(error);
   }
 };
 
 const getTypes = async () => {
   try {
-    const res = await pokeapi.get(`/type`);
+    const res = await pokeapi.get('/type');
     const typeData = await res.data.results;
 
     return typeData;
   } catch (error) {
-    console.log(error);
-    return [];
+    throw new Error(error);
   }
 };
 
@@ -57,20 +53,18 @@ const getTypeDetails = async (typeId) => {
 
     return typeDetailsData;
   } catch (error) {
-    console.log(error);
-    return [];
+    throw new Error(error);
   }
 };
 
 const getMoves = async () => {
   try {
-    const res = await pokeapi.get(`/move?limit=9999`);
+    const res = await pokeapi.get('/move?limit=9999');
     const moves = await res.data.results;
 
     return moves;
   } catch (error) {
-    console.log(error);
-    return [];
+    throw new Error(error);
   }
 };
 
@@ -81,8 +75,7 @@ const getMove = async (moveId) => {
 
     return move;
   } catch (error) {
-    console.log(error);
-    return [];
+    throw new Error(error);
   }
 };
 

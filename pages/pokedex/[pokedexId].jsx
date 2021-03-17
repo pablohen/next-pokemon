@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import pokeapiService from '../../services/pokeapiService';
 import Link from 'next/link';
+import pokeapiService from '../../services/pokeapiService';
 import MainMenu from '../../components/MainMenu';
 import TitleBar from '../../components/TitleBar';
 
@@ -26,15 +26,19 @@ const PokedexPage = () => {
       <MainMenu />
       <TitleBar title={`${pokedex?.names?.[0].name} Dex`} />
 
-      <ul>
-        {pokedex?.pokemon_entries?.map((pokemon) => (
-          <li key={pokemon.entry_number} className="capitalize">
-            <Link href={`../pokemon/${pokemon.pokemon_species.name}`}>
-              <a>{pokemon.pokemon_species.name}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <div className="px-4">
+        <ul>
+          {pokedex?.pokemon_entries?.map((pokemon) => (
+            <li key={pokemon.entry_number}>
+              <Link href={`../pokemon/${pokemon.pokemon_species.name}`}>
+                <button type="button" className="capitalize">
+                  {pokemon.pokemon_species.name}
+                </button>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

@@ -26,7 +26,9 @@ const TypesPage = () => {
           {types.map((type) => (
             <li key={type.name}>
               <Link href={`/types/${type.name}`}>
-                <a className="capitalize">{type.name}</a>
+                <button type="button" className="capitalize">
+                  {type.name}
+                </button>
               </Link>
             </li>
           ))}
