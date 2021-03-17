@@ -6,7 +6,6 @@ import pokeapiService from '../../services/pokeapiService';
 
 const PokedexPage = () => {
   const [pokedexes, setPokedexes] = useState([]);
-  // const teste = 'teste';
 
   const getPokedexesData = async () => {
     const pokedexesData = await pokeapiService.getPokedexes();
