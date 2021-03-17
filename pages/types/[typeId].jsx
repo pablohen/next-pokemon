@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import pokeapiService from '../../services/pokeapiService';
 import MainMenu from '../../components/MainMenu';
 import TitleBar from '../../components/TitleBar';
-import Link from 'next/link';
 
 const TypeDetailsPage = () => {
   const router = useRouter();
@@ -32,9 +32,12 @@ const TypeDetailsPage = () => {
         <div className="space-x-2 pt-2">
           {type?.damage_relations?.double_damage_from?.map((otherType) => (
             <Link key={otherType.name} href={`/types/${otherType.name}`}>
-              <a className="px-6 py-1 bg-gray-800 rounded-xl text-white capitalize">
+              <button
+                type="button"
+                className="px-6 py-1 bg-gray-800 rounded-xl text-white capitalize"
+              >
                 {otherType.name}
-              </a>
+              </button>
             </Link>
           ))}
         </div>
@@ -45,9 +48,12 @@ const TypeDetailsPage = () => {
         <div className="space-x-2 pt-2">
           {type?.damage_relations?.double_damage_to?.map((otherType) => (
             <Link key={otherType.name} href={`/types/${otherType.name}`}>
-              <a className="px-6 py-1 bg-gray-800 rounded-xl text-white capitalize">
+              <button
+                type="button"
+                className="px-6 py-1 bg-gray-800 rounded-xl text-white capitalize"
+              >
                 {otherType.name}
-              </a>
+              </button>
             </Link>
           ))}
         </div>
@@ -58,9 +64,12 @@ const TypeDetailsPage = () => {
         <div className="space-x-2 pt-2">
           {type?.damage_relations?.half_damage_from?.map((otherType) => (
             <Link key={otherType.name} href={`/types/${otherType.name}`}>
-              <a className="px-6 py-1 bg-gray-800 rounded-xl text-white capitalize">
+              <button
+                type="button"
+                className="px-6 py-1 bg-gray-800 rounded-xl text-white capitalize"
+              >
                 {otherType.name}
-              </a>
+              </button>
             </Link>
           ))}
         </div>
@@ -71,9 +80,12 @@ const TypeDetailsPage = () => {
         <div className="space-x-2 pt-2">
           {type?.damage_relations?.half_damage_to?.map((otherType) => (
             <Link key={otherType.name} href={`/types/${otherType.name}`}>
-              <a className="px-6 py-1 bg-gray-800 rounded-xl text-white capitalize">
+              <button
+                type="button"
+                className="px-6 py-1 bg-gray-800 rounded-xl text-white capitalize"
+              >
                 {otherType.name}
-              </a>
+              </button>
             </Link>
           ))}
         </div>
@@ -84,9 +96,12 @@ const TypeDetailsPage = () => {
         <div className="space-x-2 pt-2">
           {type?.damage_relations?.no_damage_from?.map((otherType) => (
             <Link key={otherType.name} href={`/types/${otherType.name}`}>
-              <a className="px-6 py-1 bg-gray-800 rounded-xl text-white capitalize">
+              <button
+                type="button"
+                className="px-6 py-1 bg-gray-800 rounded-xl text-white capitalize"
+              >
                 {otherType.name}
-              </a>
+              </button>
             </Link>
           ))}
         </div>
@@ -97,9 +112,12 @@ const TypeDetailsPage = () => {
         <div className="space-x-2 pt-2">
           {type?.damage_relations?.no_damage_to?.map((otherType) => (
             <Link key={otherType.name} href={`/types/${otherType.name}`}>
-              <a className="px-6 py-1 bg-gray-800 rounded-xl text-white capitalize">
+              <button
+                type="button"
+                className="px-6 py-1 bg-gray-800 rounded-xl text-white capitalize"
+              >
                 {otherType.name}
-              </a>
+              </button>
             </Link>
           ))}
         </div>
@@ -111,7 +129,9 @@ const TypeDetailsPage = () => {
           {type?.moves?.map((move) => (
             <li key={move.name}>
               <Link href={`/moves/${move.name}`}>
-                <a className="capitalize">{move.name}</a>
+                <button type="button" className="capitalize">
+                  {move.name}
+                </button>
               </Link>
             </li>
           ))}
@@ -124,7 +144,9 @@ const TypeDetailsPage = () => {
           {type?.pokemon?.map(({ pokemon }) => (
             <li key={pokemon.name}>
               <Link href={`/pokemon/${pokemon.name}`}>
-                <a className="capitalize">{pokemon.name}</a>
+                <button type="button" className="capitalize">
+                  {pokemon.name}
+                </button>
               </Link>
             </li>
           ))}

@@ -6,6 +6,7 @@ import pokeapiService from '../../services/pokeapiService';
 
 const PokedexPage = () => {
   const [pokedexes, setPokedexes] = useState([]);
+  // const teste = 'teste';
 
   const getPokedexesData = async () => {
     const pokedexesData = await pokeapiService.getPokedexes();
@@ -26,7 +27,9 @@ const PokedexPage = () => {
           {pokedexes.map((pokedex) => (
             <li key={pokedex.name}>
               <Link href={`/pokedex/${pokedex.name}`}>
-                <a className="capitalize">{pokedex.name}</a>
+                <button type="button" className="capitalize">
+                  {pokedex.name}
+                </button>
               </Link>
             </li>
           ))}
