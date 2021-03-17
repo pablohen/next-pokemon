@@ -16,10 +16,15 @@ const MainMenu = () => {
           </Link>
         </li>
         <li>
+          <Link href="/moves">
+            <a className="hover:underline">Moves</a>
+          </Link>
+        </li>
+        <li>
           <Link href="/types">
             <a className="hover:underline">Types</a>
           </Link>
-        </li>
+        </li>{' '}
       </ul>
     </nav>
   );
