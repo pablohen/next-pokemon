@@ -99,6 +99,26 @@ const getNature = async (natureId) => {
   }
 };
 
+const getBerries = async () => {
+  try {
+    const res = await pokeapi.get('/berry?limit=9999');
+    const berries = await res.data.results;
+    return berries;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+const getBerry = async (berryId) => {
+  try {
+    const res = await pokeapi.get(`/berry/${berryId}`);
+    const berry = await res.data;
+    return berry;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
 const pokeapiService = {
   getPokedexes,
   getPokedex,
@@ -109,6 +129,8 @@ const pokeapiService = {
   getMove,
   getNatures,
   getNature,
+  getBerries,
+  getBerry,
 };
 
 export default pokeapiService;
