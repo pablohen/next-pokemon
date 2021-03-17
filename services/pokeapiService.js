@@ -62,12 +62,38 @@ const getTypeDetails = async (typeId) => {
   }
 };
 
+const getMoves = async () => {
+  try {
+    const res = await pokeapi.get(`/move?limit=9999`);
+    const moves = await res.data.results;
+
+    return moves;
+  } catch (error) {
+    console.log(error);
+    return [];
+  }
+};
+
+const getMove = async (moveId) => {
+  try {
+    const res = await pokeapi.get(`/move/${moveId}`);
+    const move = await res.data;
+
+    return move;
+  } catch (error) {
+    console.log(error);
+    return [];
+  }
+};
+
 const pokeapiService = {
   getPokedexes,
   getPokedex,
   getPokemon,
   getTypes,
   getTypeDetails,
+  getMoves,
+  getMove,
 };
 
 export default pokeapiService;
