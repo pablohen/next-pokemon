@@ -1,40 +1,53 @@
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import MainMenu from '../../components/MainMenu';
 import TitleBar from '../../components/TitleBar';
 import pokeapiService from '../../services/pokeapiService';
 
-const NaturesPage = () => {
-  const [natures, setNatures] = useState([]);
-  const getNaturesData = async () => {
-    const naturesData = await pokeapiService.getNatures();
-    setNatures(naturesData);
-  };
+const NaturesPage = ({ natures }) => (
+  // const [natures, setNatures] = useState([]);
+  // const getNaturesData = async () => {
+  //   const naturesData = await pokeapiService.getNatures();
+  //   setNatures(naturesData);
+  // };
 
-  useEffect(() => {
-    getNaturesData();
-  }, []);
+  // useEffect(() => {
+  //   getNaturesData();
+  // }, []);
 
-  return (
-    <div>
-      <MainMenu />
-      <TitleBar title="Natures" />
+  <div>
+    <MainMenu />
+    <TitleBar title="Natures" />
 
-      <div className="px-4">
-        <ul>
-          {natures?.map((nature) => (
-            <li key={nature?.name}>
-              <Link href={`/natures/${nature?.name}`}>
-                <button type="button" className="capitalize">
-                  {nature?.name}
-                </button>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div className="px-4">
+      <ul>
+        {natures?.map((nature) => (
+          <li key={nature?.name}>
+            <Link href={`/natures/${nature?.name}`}>
+              <button type="button" className="capitalize">
+                {nature?.name}
+              </button>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
-  );
+  </div>
+);
+
+export const getStaticProps = async () => {
+  const naturesData = await pokeapiService.getNatures();
+
+  return {
+    props: {
+      natures: naturesData,
+    },
+  };
+};
+
+NaturesPage.propTypes = {
+  natures: PropTypes.arrayOf(PropTypes.shape()).isRequired,
 };
 
 export default NaturesPage;
