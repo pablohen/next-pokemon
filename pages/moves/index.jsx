@@ -35,6 +35,11 @@ const MovesPage = ({ moves }) => (
     </div>
   </div>
 );
+
+MovesPage.propTypes = {
+  moves: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+};
+
 export const getStaticProps = async () => {
   const movesData = await pokeapiService.getMoves();
 
@@ -43,10 +48,6 @@ export const getStaticProps = async () => {
       moves: movesData,
     },
   };
-};
-
-MovesPage.propTypes = {
-  moves: PropTypes.arrayOf(PropTypes.shape()).isRequired,
 };
 
 export default MovesPage;

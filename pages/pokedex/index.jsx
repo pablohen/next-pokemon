@@ -26,6 +26,10 @@ const PokedexPage = ({ pokedexes }) => (
   </div>
 );
 
+PokedexPage.propTypes = {
+  pokedexes: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+};
+
 export const getStaticProps = async () => {
   const pokedexesData = await pokeapiService.getPokedexes();
 
@@ -34,10 +38,6 @@ export const getStaticProps = async () => {
       pokedexes: pokedexesData,
     },
   };
-};
-
-PokedexPage.propTypes = {
-  pokedexes: PropTypes.arrayOf(PropTypes.shape()).isRequired,
 };
 
 export default PokedexPage;

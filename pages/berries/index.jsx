@@ -37,6 +37,10 @@ const BerriesPage = ({ berries }) => (
   </div>
 );
 
+BerriesPage.propTypes = {
+  berries: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+};
+
 export const getStaticProps = async () => {
   const berriesData = await pokeapiService.getBerries();
 
@@ -45,10 +49,6 @@ export const getStaticProps = async () => {
       berries: berriesData,
     },
   };
-};
-
-BerriesPage.propTypes = {
-  berries: PropTypes.arrayOf(PropTypes.shape()).isRequired,
 };
 
 export default BerriesPage;

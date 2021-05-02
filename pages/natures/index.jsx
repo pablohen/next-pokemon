@@ -36,6 +36,10 @@ const NaturesPage = ({ natures }) => (
   </div>
 );
 
+NaturesPage.propTypes = {
+  natures: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+};
+
 export const getStaticProps = async () => {
   const naturesData = await pokeapiService.getNatures();
 
@@ -44,10 +48,6 @@ export const getStaticProps = async () => {
       natures: naturesData,
     },
   };
-};
-
-NaturesPage.propTypes = {
-  natures: PropTypes.arrayOf(PropTypes.shape()).isRequired,
 };
 
 export default NaturesPage;
