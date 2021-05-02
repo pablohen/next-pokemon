@@ -31,7 +31,7 @@ const PokedexPage = () => {
           {pokedex?.pokemon_entries?.map((pokemon) => (
             <li key={pokemon.entry_number}>
               <Link href={`../pokemon/${pokemon.pokemon_species.name}`}>
-                <button type="button" className="capitalize">
+                <button type="button" className="capitalize p-2">
                   {pokemon.pokemon_species.name}
                 </button>
               </Link>
