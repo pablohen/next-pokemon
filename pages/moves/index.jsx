@@ -25,7 +25,7 @@ const MovesPage = ({ moves }) => (
         {moves?.map((move) => (
           <li key={move?.name}>
             <Link href={`/moves/${move?.name}`}>
-              <button type="button" className="capitalize">
+              <button type="button" className="capitalize py-2">
                 {move?.name}
               </button>
             </Link>

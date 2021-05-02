@@ -15,7 +15,7 @@ const PokedexPage = ({ pokedexes }) => (
         {pokedexes.map((pokedex) => (
           <li key={pokedex.name}>
             <Link href={`/pokedex/${pokedex.name}`}>
-              <button type="button" className="capitalize">
+              <button type="button" className="capitalize py-2">
                 {pokedex.name}
               </button>
             </Link>

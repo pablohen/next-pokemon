@@ -26,7 +26,7 @@ const BerriesPage = ({ berries }) => (
         {berries.map((berry) => (
           <li key={berry?.name}>
             <Link href={`/berries/${berry?.name}`}>
-              <button type="button" className="capitalize">
+              <button type="button" className="capitalize py-2">
                 {berry?.name}
               </button>
             </Link>

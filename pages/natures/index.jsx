@@ -25,7 +25,7 @@ const NaturesPage = ({ natures }) => (
         {natures?.map((nature) => (
           <li key={nature?.name}>
             <Link href={`/natures/${nature?.name}`}>
-              <button type="button" className="capitalize">
+              <button type="button" className="capitalize py-2">
                 {nature?.name}
               </button>
             </Link>
