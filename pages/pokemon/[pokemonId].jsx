@@ -35,7 +35,7 @@ export const getStaticPaths = async () => {
   const pokedex = await pokeapiService.getPokedex('national');
   const paths = pokedex.pokemon_entries.map((pokemon) => ({
     params: {
-      pokemonId: pokemon.pokemon_species.name,
+      pokemonId: String(pokemon.entry_number),
     },
   }));
 
