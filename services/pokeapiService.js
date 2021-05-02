@@ -46,7 +46,7 @@ const getTypes = async () => {
   }
 };
 
-const getTypeDetails = async (typeId) => {
+const getType = async (typeId) => {
   try {
     const res = await pokeapi.get(`/type/${typeId}`);
     const typeDetailsData = await res.data;
@@ -124,7 +124,7 @@ const pokeapiService = {
   getPokedex,
   getPokemon,
   getTypes,
-  getTypeDetails,
+  getType,
   getMoves,
   getMove,
   getNatures,
