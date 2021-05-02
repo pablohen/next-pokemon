@@ -12,7 +12,11 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <title>Next-Pokémon</title>
+          <link rel="icon" href="/favicon.ico" />
+          <meta
+            name="description"
+            content="Another Pokédex made with Next.js"
+          />
         </Head>
         <body>
           <Main />
