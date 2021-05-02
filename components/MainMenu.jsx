@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 const MainMenu = () => (
-  <nav className="flex flex-col md:flex-row space-y-4 md:space-y-0 bg-white justify-between p-4">
+  <nav className="flex flex-col md:flex-row space-y-4 md:space-y-0 bg-white justify-between p-4 border-b border-gray-200 shadow-lg">
     <span className="font-semibold">
       <Link href="/">
         <button type="button">Next-Pokémon</button>
